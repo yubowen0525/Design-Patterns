@@ -3,10 +3,12 @@
 
 # 环境和问题
 **环境：**
-- ![环境](.README_images/272bdd25.png)
+   
+   ![环境](.README_images/272bdd25.png)
 
 **问题：**
-- ![问题](.README_images/94d67490.png)
+    
+   ![问题](.README_images/94d67490.png)
 - 客户端 **出现了只知道接口而不知实现的情况**，若使用Impl类实现就使用了具体的实现这**违背封装隔离**
 
 # 解决方案
