@@ -1,9 +1,12 @@
-package SimpleFactory
+package SimpleFactory_test
 
-import "testing"
+import (
+	"my_design_pattern/Creational_Patterns/SimpleFactory"
+	"testing"
+)
 
 func TestImplA_Say(t *testing.T) {
-	api := NewApi("A")
+	api := SimpleFactory.NewApi("A")
 	if api == nil {
 		t.Fatal("error api is nil")
 	}
@@ -14,7 +17,7 @@ func TestImplA_Say(t *testing.T) {
 }
 
 func TestImplB_Say(t *testing.T) {
-	api := NewApi("B")
+	api := SimpleFactory.NewApi("B")
 	if api == nil {
 		t.Fatal("error api is nil")
 	}
