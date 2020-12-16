@@ -1,17 +1,17 @@
 # Desgin Pattern
 
-[Creational Patterns](./Creational%20Patterns)
+[Creational Patterns](./Creational_Patterns)
 
 | 模式 | 描述 |
 | ------------- | ------------- |
-| [SimpleFactory](./Creational%20Patterns/SimpleFactory)  | 选择实现任意接口  |
+| [SimpleFactory](./Creational_Patterns/SimpleFactory)  | 选择实现任意接口  |
 
 ---
-[Structural Patterns](./Structural%20Patterns)
+[Structural Patterns](./Structural_Patterns)
 
 | 模式  | 描述 |
 | ------------- | ------------- |
-| [Facade](./Structural%20Patterns/Facade)  | 将一种类型用作多个其他类型的API  |
+| [Facade](./Structural_Patterns/Facade)  | 将一种类型用作多个其他类型的API  |
 
 ---
 参考资料
