@@ -12,6 +12,7 @@
 | 模式  | 描述 |
 | ------------- | ------------- |
 | [Facade](./Structural_Patterns/Facade)  | 将一种类型用作多个其他类型的API  |
+| [Adapter](./Structural_Patterns/Adapter)  | 转换匹配，复用功能  |
 
 ---
 参考资料
