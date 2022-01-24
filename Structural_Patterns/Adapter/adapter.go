@@ -5,11 +5,6 @@ type Target interface {
 	Request() string
 }
 
-// Adaptee工厂函数
-func CreateAdaptee() Adaptee {
-	return &AdapteeImpl{}
-}
-
 // Adaptee是被适配的的目标接口
 type Adaptee interface {
 	SpecificRequest() string
@@ -21,6 +16,11 @@ type AdapteeImpl struct {
 
 func (a *AdapteeImpl) SpecificRequest() string {
 	return "adaptee method"
+}
+
+// Adaptee工厂函数
+func CreateAdaptee() Adaptee {
+	return &AdapteeImpl{}
 }
 
 // Adapter的工厂函数
