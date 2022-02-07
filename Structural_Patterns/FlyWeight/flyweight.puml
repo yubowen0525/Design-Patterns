@@ -1,0 +1,28 @@
+@startuml proxy
+
+ChessPieceUnit "1" <--* "1" ChessPiece : 组合
+ChessPiece "many" <--* "1" ChessBoard : 组合
+
+class ChessPieceUnit {
+    +ID    uint
+	+Name  string
+	+Color string
+}
+
+class ChessPiece {
+	+Unit *ChessPieceUnit
+	+X    int
+	+Y    int
+}
+
+class ChessBoard  {
+	-chessPieces map[int]*ChessPiece
+    +Move(id, x, y int)
+}
+
+note left of ChessPieceUnit: 因为每个棋局的棋子是一样的名字与颜色，\n所以创建全局的实例， 其它对象引用即可。
+note left of ChessPiece: 引用棋子元，每个棋子都有自己的方位X，Y。
+note left of ChessBoard: 引用全部棋子，每个都可以Move移动。
+
+note "整体节约了大量内存，所以\n需要注意全局变量与类中的变量" as N1
+@enduml
