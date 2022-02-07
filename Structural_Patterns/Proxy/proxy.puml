@@ -1,0 +1,26 @@
+@startuml proxy
+interface       IUser
+
+IUser <|.. User
+IUser <|.. UserProxy
+User "1" <--* "1" UserProxy : 组合
+
+interface IUser{
+    +Login(username, password string) error
+}
+
+class User {
+    +Login(username, password string) error
+}
+
+class UserProxy {
+    -user *User
+    +Login(username, password string) error
+}
+
+note "UserProxy 为 User Login方法增加额外的功能" as N1
+N1 .. UserProxy
+
+note left of UserProxy : 当多个类都需要用到额外的功能，\n则每个Proxy都是重复的代码\n可使用Go的生成语法。
+
+@enduml
