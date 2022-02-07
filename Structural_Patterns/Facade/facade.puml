@@ -1,0 +1,44 @@
+@startuml proxy
+interface       API
+interface       AModuleAPI
+interface       BModuleAPI
+circle          Client
+
+API <|.. "客户端" Client
+
+API <|.. facadeAPIImpl : 实现
+AModuleAPI <|.. aModuleImpl : 实现
+BModuleAPI <|.. bModuleImpl : 实现
+
+
+AModuleAPI "1" <--* "1" facadeAPIImpl : 组合
+BModuleAPI "1" <--* "1" facadeAPIImpl : 组合
+
+
+interface API{
+    +Test() string
+}
+
+interface AModuleAPI{
+    +TestA() string
+}
+
+interface BModuleAPI{
+    +TestB() string
+}
+
+class aModuleImpl {
+    +TestA() string
+}
+
+class bModuleImpl {
+    +TestB() string
+}
+
+class facadeAPIImpl {
+    -a AModuleAPI
+    -b BModuleAPI
+    +Test() string
+}
+
+@enduml
