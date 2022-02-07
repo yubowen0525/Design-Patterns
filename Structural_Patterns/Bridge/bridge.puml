@@ -1,0 +1,45 @@
+@startuml proxy
+interface       IMsgSender
+interface       INotification
+entity          NewEmailMsgSender
+entity          NewErrorNotification
+entity          NewWarningNotification
+
+EmailMsgSender <-- NewEmailMsgSender : 实例
+ErrorNotification <-- NewErrorNotification : 实例
+WarningNotification <-- NewWarningNotification : 实例
+
+IMsgSender <|.. EmailMsgSender : 实现
+INotification <|.. ErrorNotification : 实现
+INotification <|.. WarningNotification : 实现
+
+IMsgSender "1" <--* "1" ErrorNotification : 组合
+IMsgSender "1" <--* "1" WarningNotification : 组合
+
+interface IMsgSender{
+    +Send(msg string) error
+}
+
+interface INotification{
+    +Notify(msg string) error
+}
+
+class EmailMsgSender {
+    -emails []string
+    +Send(msg string) error
+}
+
+class ErrorNotification {
+    -sender IMsgSender
+    +Notify(msg string) error
+}
+
+class WarningNotification {
+    -sender IMsgSender
+    +Notify(msg string) error
+}
+
+note "组合IMsgSender，使Warn、Error、Info获得发送的能力\n，客户端来选择具体的通知方式" as N1
+NewErrorNotification .. N1 
+NewWarningNotification .. N1 
+@enduml
