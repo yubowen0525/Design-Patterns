@@ -11,6 +11,7 @@
 
 | 模式  | 描述 |
 | ------------- | ------------- |
+| [Proxy](./Structural_Patterns/Proxy)  |  引入代理类来给原始类附加功能 |
 | [Facade](./Structural_Patterns/Facade)  | 将一种类型用作多个其他类型的API  |
 | [Adapter](./Structural_Patterns/Adapter)  | 转换匹配，复用功能  |
 
