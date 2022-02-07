@@ -1,0 +1,34 @@
+@startuml proxy
+interface       Target
+interface       Adaptee
+entity          CreateAdapter
+entity          CreateAdaptee
+circle          Client
+
+Target <|.. "客户端" Client
+Target <|.. adapter : 实现
+Adaptee <|.. AdapteeImpl : 实现
+Adaptee "1" <--* "1" adapter : 组合
+
+adapter <-- CreateAdapter
+AdapteeImpl <-- CreateAdaptee
+
+interface Target{
+    +Request() string
+}
+
+interface Adaptee{
+    +SpecificRequest() string
+}
+
+class AdapteeImpl {
+    +SpecificRequest() string
+}
+
+class adapter {
+    -adaptee Adaptee
+    +Request() string
+}
+
+note bottom of CreateAdapter : 利用CreateAdaptee 赋值 adaptee， \n返回Target接口以便客户端调用Request
+@enduml
