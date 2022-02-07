@@ -1,0 +1,26 @@
+@startuml proxy
+interface       IOrganization
+circle          Client
+
+IOrganization <|.. "客户端" Client
+IOrganization <|.. Employee : 实现
+IOrganization <|.. Department : 实现
+IOrganization "many" <--* "1" Department : 组合
+
+
+interface IOrganization{
+    +Count() int
+}
+
+class Employee {
+    +Count() int
+}
+
+class Department {
+    +Name string
+    +{field}SubOrganizations []IOrganization
+    +Count() int
+    +AddSub(org IOrganization)
+}
+
+@enduml
