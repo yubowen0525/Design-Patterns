@@ -1,0 +1,21 @@
+@startuml proxy
+interface       IDraw
+
+IDraw <|.. Square : 实现
+IDraw <|.. ColorSquare : 实现
+IDraw "1" <--* "1" ColorSquare : 组合
+
+interface IDraw{
+    +Draw() string
+}
+
+class Square{
+    +Draw() string
+}
+
+class ColorSquare {
+    -square IDraw
+    -color  string
+    +Draw() string
+}
+@enduml
