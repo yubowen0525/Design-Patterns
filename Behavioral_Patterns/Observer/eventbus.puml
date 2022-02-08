@@ -1,0 +1,23 @@
+@startuml proxy
+interface       Bus
+
+Bus <|.. AsyncEventBus : 实现
+
+interface Bus{
+	+Subscribe(topic string, handler interface{}) error
+	+Publish(topic string, args ...interface{})
+}
+
+class AsyncEventBus {
+    -handlers map[string][]reflect.Value
+    -lock     sync.Mutex
+	+Subscribe(topic string, handler interface{}) error
+	+Publish(topic string, args ...interface{})
+}
+
+note left of AsyncEventBus::handlers
+    用于存放注册的函数，当有消息发布时，
+    每个函数都会收到通知并且异步执行函数。
+end note 
+
+@enduml

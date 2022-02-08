@@ -1,0 +1,35 @@
+@startuml proxy
+interface       ISubject
+interface       IObserver
+
+ISubject <|.. Subject : 实现
+IObserver <|.. Observer1 : 实现
+IObserver <|.. Observer2 : 实现
+IObserver "many" <--* "1" Subject : 组合
+
+interface ISubject{
+    +Register(observer IObserver)
+	+Remove(observer IObserver)
+	+Notify(msg string)
+}
+
+interface IObserver{
+    +Update(msg string)
+}
+
+class Subject {
+    -observers []IObserver
+    +Register(observer IObserver)
+    +Remove(observer IObserver)
+    +Notify(msg string)
+}
+
+class Observer1 {
+    +Update(msg string)
+}
+
+class Observer2 {
+    +Update(msg string)
+}
+
+@enduml

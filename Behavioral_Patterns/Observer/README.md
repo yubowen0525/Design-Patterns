@@ -8,3 +8,10 @@
 
 
 ![图 1](../../image/bfc0310b53d6c47fdf3c6b8e9340c0a4d72c2a5e30955ea128c9da6ecf49f912.png)  
+
+---
+UML: 同步模型
+![图 1](../../image/36e03f7a05606be39ac6a1c8a54b54c9b294231ad575f7e5ed805eecd6581567.png)  
+
+UML: 异步模型
+![图 2](../../image/686851286f183a84c6830a7dc7f20c1a5be1e1254af3f73eaf94ff34c8876b29.png)  
