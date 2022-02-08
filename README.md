@@ -20,6 +20,14 @@
 | [Adapter](./Structural_Patterns/Adapter)  | 转换匹配，复用功能  |
 | [Composite](./Structural_Patterns/Composite)  | 组合模式解决复杂的树型数据结构  |
 | [FlyWeight](./Structural_Patterns/FlyWeight)  | 享元模式复用对象，节约内存  |
+---
+[Behavioral_Patterns](./Behavioral_Patterns)
+
+| 模式  | 描述 |
+| ------------- | ------------- |
+| [Observer](./Behavioral_Patterns/Observer)  |  观察者模式解耦一对多依赖 |
+| [Template](./Behavioral_Patterns/Template)  |  解决复用和扩展问题 |
+| [Strategy](./Behavioral_Patterns/Strategy)  |  避免冗长的if-else  |
 
 ---
 参考资料
