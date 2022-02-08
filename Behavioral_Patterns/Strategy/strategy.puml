@@ -1,0 +1,20 @@
+@startuml proxy
+interface       StorageStrategy
+
+StorageStrategy <|.. fileStorage : 实现
+StorageStrategy <|.. encryptFileStorage : 实现
+
+interface StorageStrategy{
+    +Save(name string, data []byte) error
+}
+
+class fileStorage {
+    +Save(name string, data []byte) error
+}
+
+class encryptFileStorage {
+    +Save(name string, data []byte) error 
+}
+
+note top of StorageStrategy: 利用map[str]StorageStrategy 创建对应的映射关系，根据不同的需求选择不同的算法。
+@enduml
