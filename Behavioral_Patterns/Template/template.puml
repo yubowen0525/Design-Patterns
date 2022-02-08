@@ -1,0 +1,31 @@
+@startuml proxy
+interface       ISMS
+
+ISMS <|.. TelecomSms : 实现
+ISMS "1" <--* "1" sms : 组合
+sms "1" <--* "1" TelecomSms : 组合
+
+interface ISMS{
+    +send(content string, phone int) error
+}
+
+class sms {
+    +ISMS
+    +Send(content string, phone int) error
+}
+
+class TelecomSms {
+    -*sms    
+    +send(content string, phone int) error
+}
+
+note right of sms::Send
+    父类存在的功能，比如校验，
+    然后调用子类。
+end note
+
+note left of TelecomSms::send
+    子类的send是具体功能
+    New TelecomSms的时候，用自己赋值给sms::ISMS
+end note
+@enduml
