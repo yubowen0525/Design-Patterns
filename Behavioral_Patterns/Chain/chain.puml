@@ -1,0 +1,27 @@
+@startuml proxy
+interface       SensitiveWordFilter
+
+SensitiveWordFilter <|.. SensitiveWordFilterChain : 实现
+SensitiveWordFilter <|.. AdSensitiveWordFilter : 实现
+SensitiveWordFilter <|.. PoliticalWordFilter : 实现
+SensitiveWordFilter "many" <--* "1" SensitiveWordFilterChain : 组合
+
+interface SensitiveWordFilter{
+    +Filter(content string) bool
+}
+
+class SensitiveWordFilterChain {
+    -filters []SensitiveWordFilter
+    +AddFilter(filter SensitiveWordFilter)
+    +Filter(content string) bool
+}
+
+class AdSensitiveWordFilter {
+    +Filter(content string) bool
+}
+
+class PoliticalWordFilter {
+    +Filter(content string) bool
+}
+
+@enduml

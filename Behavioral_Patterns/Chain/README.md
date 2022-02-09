@@ -1,5 +1,7 @@
 ![图 2](../../image/406a444f4c513b9e9742a5af050b0d083b4fb33376f80c4d49b1016b8619f163.png)  
 
+![图 5](../../image/4673a3ad21d1abe4016ba46634a13aba575ef26f45cc1db704fe68dc763208c3.png)  
+
 # 职责链模式
 
 职责链模式的英文翻译是 Chain Of Responsibility Design Pattern。在 GoF 的《设计模式》中，它是这么定义的：
