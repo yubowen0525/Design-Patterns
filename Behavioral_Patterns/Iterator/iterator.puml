@@ -1,0 +1,25 @@
+@startuml proxy
+interface       Iterator
+
+Iterator <|.. ArrayIntIterator : 实现
+Iterator "1" <-- "1" ArrayInt : 依赖
+ArrayInt "1" <--* "1" ArrayIntIterator : 组合
+
+interface Iterator{
+    +HasNext() bool
+	+Next()
+	+CurrentItem() interface{}
+}
+
+class ArrayInt {
+    +Iterator() Iterator
+}
+
+class ArrayIntIterator {
+    -arrayInt ArrayInt
+	-index    int   
+    +HasNext() bool
+    +Next()
+	+CurrentItem() interface{}
+}
+@enduml

@@ -2,6 +2,9 @@
 # Iterator
 ![图 3](../../image/3d674c0f9432afe92d1db130f20c4a9714cbefd6fd0919160545ebe18c19120a.png)  
 
+![图 6](../../image/18cef426638c2f6d349de2d4d2c95aa963998eab9a9e8bc4fab70440aa918174.png)  
+
+
 **迭代器模式主要作用是解耦容器代码和遍历代码**
 
 
