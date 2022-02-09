@@ -1,0 +1,40 @@
+@startuml proxy
+interface       IState
+
+IState <|.. leaderApproveState : 实现
+IState <|.. financeApproveState : 实现
+IState "1" <--* "1" Machine : 组合
+Machine "1" <-- "1" IState : 依赖
+
+interface IState{
+	+Approval(m *Machine)
+	+Reject(m *Machine)
+	+GetName() string
+}
+
+class Machine {
+    -state IState
+    +Reject()
+    +Approval()
+    +GetStateName() string
+    +SetState(state IState)
+}
+
+class leaderApproveState {
+    +Approval(m *Machine)
+	+Reject(m *Machine)
+	+GetName() string
+}
+
+class financeApproveState {
+    +Approval(m *Machine)
+	+Reject(m *Machine)
+	+GetName() string
+}
+
+note left of Machine::SetState
+    事件发生后，做完动作，状态发生改变
+    修改Machine当前的状态。
+end note
+
+@enduml

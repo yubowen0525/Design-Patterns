@@ -1,6 +1,9 @@
 # 状态模式
 ![图 5](../../image/2bfd2cab958224d588aaeb4932f6815b62d5a060755e66cca866672988613956.png)  
 
+![图 7](../../image/af1da7cb86d08f7b0198eda98b3b19b49bbb6825c537694e841066e6bd87838b.png)  
+
+
 # 什么是有限状态机？
 有限状态机，英文翻译是 Finite State Machine，**缩写为 FSM，简称为状态机**。状态机有 3 个组成部分：状态（State）、事件（Event）、动作（Action）。其中，事件也称为转移条件（Transition Condition）。事件触发状态的转移及动作的执行。不过，动作不是必须的，也可能只转移状态，不执行任何动作。
 
