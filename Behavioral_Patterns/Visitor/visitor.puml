@@ -1,0 +1,35 @@
+@startuml proxy
+interface       Visitor
+interface       IResourceFile
+
+Visitor <|.. Compressor : 实现
+IResourceFile <|.. PdfFile : 实现
+IResourceFile <|.. PPTFile : 实现
+IResourceFile "1" <--* "1" Visitor :依赖
+Visitor "1" <-- "1" IResourceFile : 依赖
+
+interface Visitor{
+	+Visit(IResourceFile) error
+}
+
+interface IResourceFile{
+	+Accept(Visitor) error
+}
+
+class PdfFile {
+    -path string
+    +Accept(Visitor) error
+}
+
+class PPTFile {
+    -path string
+    +Accept(Visitor) error
+}
+
+class Compressor {
+    +Visit(r IResourceFile) error
+    +VisitPPTFile(f *PPTFile) error
+    +VisitPDFFile(f *PdfFile) error
+}
+
+@enduml
