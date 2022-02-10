@@ -1,0 +1,36 @@
+@startuml proxy
+interface       IExpression
+
+IExpression <|.. AlertRule : 实现
+IExpression <|.. GreaterExpression : 实现
+IExpression <|.. LessExpression : 实现
+IExpression <|.. AndExpression : 实现
+IExpression "many" <--* "1" AndExpression : 组合
+IExpression "1" <--* "1" AlertRule : 组合
+
+interface IExpression{
+	+Interpret(stats map[string]float64) bool
+}
+
+class AlertRule {
+    -expression IExpression
+    +Interpret(stats map[string]float64) bool
+}
+
+class GreaterExpression {
+	-key   string
+	-value float64
+	+Interpret(stats map[string]float64) bool
+}
+
+class LessExpression {
+	-key   string
+	-value float64
+	+Interpret(stats map[string]float64) bool
+}
+
+class AndExpression {
+	-expressions []IExpression
+	+Interpret(stats map[string]float64) bool
+}
+@enduml
