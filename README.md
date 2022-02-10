@@ -28,6 +28,12 @@
 | [Observer](./Behavioral_Patterns/Observer)  |  观察者模式解耦一对多依赖 |
 | [Template](./Behavioral_Patterns/Template)  |  解决复用和扩展问题 |
 | [Strategy](./Behavioral_Patterns/Strategy)  |  避免冗长的if-else  |
+| [Chain](./Behavioral_Patterns/Chain)  |  链条上的每个处理器各自承担各自的处理职责  |
+| [Iterator](./Behavioral_Patterns/Iterator)  |  解耦容器代码和遍历代码  |
+| [State](./Behavioral_Patterns/State)  |  事件触发状态的转移及动作的执行  |
+| [Visitor](./Behavioral_Patterns/Visitor) | 设计意图是解耦操作和对象本身 |
+| [Memento](./Behavioral_Patterns/Memento) | 不违背封装的前提下，存储或恢复快照 |
+| [Command](./Behavioral_Patterns/Command) | 函数封对象，控制命令的执行 ｜
 
 ---
 参考资料

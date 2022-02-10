@@ -1,0 +1,19 @@
+@startuml proxy
+interface       ICommand
+
+ICommand <|.. StartCommand : 实现
+ICommand <|.. ArchiveCommand : 实现
+
+interface ICommand{
+	+Execute() error
+}
+
+class StartCommand {
+    +Execute() error 
+}
+
+class ArchiveCommand {
+    +Execute() error 
+}
+
+@enduml
