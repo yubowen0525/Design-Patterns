@@ -1,0 +1,37 @@
+@startuml proxy
+interface       IMediator
+
+IMediator <|.. Dialog : 实现
+Input "1" <--* "1" Dialog : 组合
+Selection "1" <--* "1" Dialog : 组合
+Button "1" <--* "1" Dialog : 组合
+
+interface IMediator{
+	+HandleEvent(component interface{})
+}
+
+class Input {
+    +String() string
+}
+
+class Selection {
+    +Selected() string
+}
+
+class Button {
+    -onClick func()
+	+SetOnClick(f func())
+	+GetName() string
+}
+
+class Dialog{
+    +LoginButton         *Button
+	+RegButton           *Button
+	+Selection           *Selection
+	+UsernameInput       *Input
+	+PasswordInput       *Input
+	+RepeatPasswordInput *Input
+    +HandleEvent(component interface{})
+}
+
+@enduml

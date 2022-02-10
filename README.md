@@ -35,6 +35,7 @@
 | [Memento](./Behavioral_Patterns/Memento) | 不违背封装的前提下，存储或恢复快照 |
 | [Command](./Behavioral_Patterns/Command) | 函数封对象，控制命令的执行 ｜
 | [Interpreter](./Behavioral_Patterns/Interpreter) | 拆分语法解析 ｜
+| [Mediator](./Behavioral_Patterns/Mediator) | 引入中介，简化上下层依赖 ｜
 
 ---
 参考资料
