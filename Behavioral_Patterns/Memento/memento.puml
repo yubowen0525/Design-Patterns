@@ -1,0 +1,18 @@
+@startuml proxy
+
+class InputText {
+    -content string
+    +Append(content string)
+    +GetText() string
+    +Snapshot() *Snapshot
+    +Restore(s *Snapshot)
+}
+
+class Snapshot {
+    -content string
+    +GetText() string
+}
+
+Snapshot "1" <-- "1" InputText :依赖
+
+@enduml
