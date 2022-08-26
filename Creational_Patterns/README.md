@@ -1,5 +1,5 @@
 # Creational_Paterns
-用于创建对象的设计模式
+用于创建对象的设计模式， 类的创建逻辑推迟或委派给其他类做
 
 ![图 2](../image/e5a061ca60e33daac5e07efbfa0292f589a9970f205d5dfafd6f29594b94da01.png)  
 
